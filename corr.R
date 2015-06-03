@@ -23,11 +23,13 @@ corr <- function(directory, threshold = 0) {
   for (i in observations$id){
     ## read data
     csv_data <- read.csv(paste(directory,filelist[i],sep="/"))
+    complete <- complete.cases(csv_data) ## find rows where data is available
+    csv_data <- csv_data[complete,] ## remove NA rows
     
-    
+    ## calculate correlation
+    correlation <- cor(csv_data$nitrate,csv_data$sulfate)
+    output <- append(output,correlation)
   }
   
-  observations
-  ##observations
-  
+  output
 }
