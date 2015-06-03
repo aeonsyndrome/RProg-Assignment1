@@ -18,11 +18,12 @@ corr <- function(directory, threshold = 0) {
   ## remove those with observations under threshold
   observations <- subset(observations, observations$nobs > threshold)
   
-  output <- vector(length=length(observations$id))
+  output <- vector(mode="numeric")
   
   for (i in observations$id){
     ## read data
     csv_data <- read.csv(paste(directory,filelist[i],sep="/"))
+    
     
   }
   
