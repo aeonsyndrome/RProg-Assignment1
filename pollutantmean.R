@@ -40,6 +40,6 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
   else { 
     sum_pollutant / count_pollutant
   }
-  
+  # output
   mean_pollutant
 }
